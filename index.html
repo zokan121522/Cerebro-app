@@ -14,8 +14,9 @@
 function switchLang(lang) {
   document.querySelectorAll("[data-es]").forEach(el => {
     const content = el.getAttribute("data-" + lang);
+    if (!content) return;
 
-    // Si el contenido tiene HTML, usar innerHTML
+    // Si contiene HTML, usar innerHTML
     if (content.includes("<")) {
       el.innerHTML = content;
     } else {
@@ -58,10 +59,7 @@ window.onload = () => switchLang("es");
 
     <div class="feature-card">
       <h3>📅 
-        <span 
-          data-es="Sistema de Agenda"
-          data-en="Agenda System">
-        </span>
+        <span data-es="Sistema de Agenda" data-en="Agenda System"></span>
       </h3>
       <p 
         data-es="Registra sesiones reales, mide tiempo efectivo y analiza el progreso semanal."
@@ -71,10 +69,7 @@ window.onload = () => switchLang("es");
 
     <div class="feature-card">
       <h3>📚 
-        <span 
-          data-es="Sistema de Aprendizaje"
-          data-en="Learning System">
-        </span>
+        <span data-es="Sistema de Aprendizaje" data-en="Learning System"></span>
       </h3>
       <p 
         data-es="Cursos estructurados con bloques de contenido y ejercicios integrados."
@@ -84,10 +79,7 @@ window.onload = () => switchLang("es");
 
     <div class="feature-card">
       <h3>🗂 
-        <span 
-          data-es="Motor de Workflow"
-          data-en="Workflow Engine">
-        </span>
+        <span data-es="Motor de Workflow" data-en="Workflow Engine"></span>
       </h3>
       <p 
         data-es="Gestión de trabajo profesional dentro del mismo ecosistema."
@@ -97,10 +89,7 @@ window.onload = () => switchLang("es");
 
     <div class="feature-card">
       <h3>🧠 
-        <span 
-          data-es="Sistema de Prompts"
-          data-en="Prompts System">
-        </span>
+        <span data-es="Sistema de Prompts" data-en="Prompts System"></span>
       </h3>
       <p 
         data-es="Rutinas mentales reutilizables y pensamiento estructurado."
@@ -110,10 +99,7 @@ window.onload = () => switchLang("es");
 
     <div class="feature-card">
       <h3>💻 
-        <span 
-          data-es="Módulo de Algoritmia (Próximamente)"
-          data-en="Algorithm Module (Coming Soon)">
-        </span>
+        <span data-es="Módulo de Algoritmia (Próximamente)" data-en="Algorithm Module (Coming Soon)"></span>
       </h3>
       <p 
         data-es="Espacio dedicado a entrenamiento técnico disponible en próximas actualizaciones."
@@ -126,32 +112,25 @@ window.onload = () => switchLang("es");
 
 <section id="download" class="download">
 
-  <h2 
-    data-es="Descargar"
-    data-en="Download">
-  </h2>
+  <h2 data-es="Descargar" data-en="Download"></h2>
 
-  <h3 
-    data-es="Última versión estable"
-    data-en="Latest stable version">
-  </h3>
+  <h3 data-es="Última versión estable" data-en="Latest stable version"></h3>
 
-  <p 
-    data-es="Versión portable (no requiere instalación)"
-    data-en="Portable version (no installation required)">
-  </p>
+  <p data-es="Versión portable (no requiere instalación)" 
+     data-en="Portable version (no installation required)"></p>
 
   <div style="display:flex; flex-wrap:wrap; gap:40px; margin-top:50px; justify-content:center;">
 
     <!-- WINDOWS CARD -->
     <div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
 
-      <h3 style="margin-bottom:20px;">🪟 Windows</h3>
+      <h3 data-es="🪟 Windows" data-en="🪟 Windows"></h3>
 
       <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-Windows.zip"
          class="btn stable"
-         style="display:inline-block; margin-bottom:30px;">
-         Descargar
+         style="display:inline-block; margin-bottom:30px;"
+         data-es="Descargar"
+         data-en="Download">
       </a>
 
       <div style="opacity:0.85; line-height:1.7;"
@@ -165,16 +144,16 @@ window.onload = () => switchLang("es");
 
     </div>
 
-
     <!-- MAC CARD -->
     <div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
 
-      <h3 style="margin-bottom:20px;">🍎 macOS</h3>
+      <h3 data-es="🍎 macOS" data-en="🍎 macOS"></h3>
 
       <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-macOS.zip"
          class="btn stable"
-         style="display:inline-block; margin-bottom:30px;">
-         Descargar
+         style="display:inline-block; margin-bottom:30px;"
+         data-es="Descargar"
+         data-en="Download">
       </a>
 
       <div style="opacity:0.85; line-height:1.7;"

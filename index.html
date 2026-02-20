@@ -130,61 +130,73 @@ window.onload = () => switchLang("es");
   </h3>
 
   <p 
-    data-es="Build portable (no requiere instalación)"
-    data-en="Portable build (no installation required)">
+    data-es="Versión portable (no requiere instalación)"
+    data-en="Portable version (no installation required)">
   </p>
 
-  <div style="display:flex; flex-wrap:wrap; gap:30px; margin-top:40px; justify-content:center;">
+  <div style="display:flex; flex-wrap:wrap; gap:40px; margin-top:50px; justify-content:center;">
 
     <!-- WINDOWS CARD -->
-    <div style="flex:1 1 320px; max-width:420px; background:#111827; padding:30px; border-radius:12px;">
+    <div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
 
       <h3 style="margin-bottom:20px;">🪟 Windows</h3>
 
       <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-Windows.zip"
          class="btn stable"
-         style="display:inline-block; margin-bottom:25px;">
+         style="display:inline-block; margin-bottom:30px;">
          Descargar
       </a>
 
-      <div style="opacity:0.85; line-height:1.6;">
-        1️⃣ Descomprime el .zip<br>
-        2️⃣ Ejecuta CEREBRO<br>
-        3️⃣ Puedes mover la carpeta donde quieras
+      <div style="opacity:0.85; line-height:1.7;"
+           data-es="1️⃣ Descomprime el archivo .zip<br>
+                    2️⃣ Ejecuta CEREBRO<br>
+                    3️⃣ Puedes mover la carpeta donde quieras"
+           data-en="1️⃣ Extract the .zip file<br>
+                    2️⃣ Run CEREBRO<br>
+                    3️⃣ You can move the folder anywhere you like">
       </div>
 
     </div>
 
 
     <!-- MAC CARD -->
-    <div style="flex:1 1 320px; max-width:420px; background:#111827; padding:30px; border-radius:12px;">
+    <div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
 
       <h3 style="margin-bottom:20px;">🍎 macOS</h3>
 
       <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-macOS.zip"
          class="btn stable"
-         style="display:inline-block; margin-bottom:25px;">
+         style="display:inline-block; margin-bottom:30px;">
          Descargar
       </a>
 
-      <div style="opacity:0.85; line-height:1.6;">
-        1️⃣ Descomprime el .zip<br>
-        2️⃣ Abre Terminal en la carpeta<br>
-        3️⃣ Ejecuta:<br><br>
+      <div style="opacity:0.85; line-height:1.7;"
+           data-es="1️⃣ Descomprime el archivo .zip<br>
+                    2️⃣ Abre Terminal en la carpeta donde esté CEREBRO.app<br>
+                    3️⃣ Ejecuta el siguiente comando:"
+           data-en="1️⃣ Extract the .zip file<br>
+                    2️⃣ Open Terminal in the folder containing CEREBRO.app<br>
+                    3️⃣ Run the following command:">
+      </div>
 
-        <code style="background:#000; padding:6px 10px; border-radius:6px; display:inline-block;">
+      <div style="margin:15px 0;">
+        <code style="background:#000; padding:8px 14px; border-radius:8px; display:inline-block;">
           xattr -cr CEREBRO.app
-        </code><br><br>
+        </code>
+      </div>
 
-        4️⃣ Ahora puedes abrir con doble click<br>
-        5️⃣ Puedes mover la app a Escritorio o Aplicaciones
+      <div style="opacity:0.85; line-height:1.7;"
+           data-es="4️⃣ Después podrás abrir la app con doble click<br>
+                    5️⃣ Puedes moverla al Escritorio o a Aplicaciones"
+           data-en="4️⃣ After that, you can open the app with double click<br>
+                    5️⃣ You can move it to Desktop or Applications">
       </div>
 
     </div>
 
   </div>
 
-  <p style="margin-top:40px; opacity:0.6;"
+  <p style="margin-top:50px; opacity:0.6;"
      data-es="Release oficial generada automáticamente mediante CI/CD."
      data-en="Official production release built via automated CI pipeline.">
   </p>

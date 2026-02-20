@@ -135,12 +135,17 @@ window.onload = () => switchLang("es");
 
   <h3 data-es="🪟 Windows" data-en="🪟 Windows"></h3>
 
-  <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-Windows.zip"
-     class="btn stable"
-     style="display:inline-block; margin-bottom:30px;"
-     data-es="Descargar"
-     data-en="Download">
-  </a>
+<a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-Windows.zip"
+   class="btn stable"
+   style="display:inline-block; margin-bottom:30px;"
+   data-es="Descargar"
+   data-en="Download"
+   onclick="gtag('event', 'download_windows', {
+     event_category: 'download',
+     event_label: 'windows'
+   });">
+</a>
+
 
   <div style="opacity:0.85; line-height:1.7;"
        data-es="1️⃣ Descomprime el archivo .zip<br>
@@ -165,11 +170,15 @@ window.onload = () => switchLang("es");
       <h3 data-es="🍎 macOS" data-en="🍎 macOS"></h3>
 
       <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-macOS.zip"
-         class="btn stable"
-         style="display:inline-block; margin-bottom:30px;"
-         data-es="Descargar"
-         data-en="Download">
-      </a>
+   class="btn stable"
+   style="display:inline-block; margin-bottom:30px;"
+   data-es="Descargar"
+   data-en="Download"
+   onclick="gtag('event', 'download_macos', {
+     event_category: 'download',
+     event_label: 'macos'
+   });">
+</a>
 
       <div style="opacity:0.85; line-height:1.7;"
            data-es="1️⃣ Descomprime el archivo .zip<br>

@@ -13,7 +13,14 @@
 <script>
 function switchLang(lang) {
   document.querySelectorAll("[data-es]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + lang);
+    const content = el.getAttribute("data-" + lang);
+
+    // Si el contenido tiene HTML, usar innerHTML
+    if (content.includes("<")) {
+      el.innerHTML = content;
+    } else {
+      el.textContent = content;
+    }
   });
 }
 window.onload = () => switchLang("es");

@@ -1,0 +1,170 @@
+
+  <section>
+
+  <h2>1.3 Código fuente, código objeto y código ejecutable</h2>
+
+<br>
+<hr>
+<br>
+
+  <!-- ========================== -->
+  <!-- 1.3.1 TIPOS DE CÓDIGO -->
+  <!-- ========================== -->
+
+  <section>
+
+    <h3>1.3.1 Tipos de código</h3>
+
+    <p><strong>Cuando escribimos un código, pasa por distintos estados hasta ejecutarse.</strong></p>
+
+    <pre><code>
+    Código Fuente  →  Código Objeto  →  Código Ejecutable
+    </code></pre>
+
+    <table>
+      <tr>
+        <td><strong>Código fuente</strong></td>
+        <td>Código escrito por el programador en lenguaje de alto nivel. No es ejecutable directamente.</td>
+      </tr>
+      <tr>
+        <td><strong>Código objeto</strong></td>
+        <td>Resultado de la compilación. Representación intermedia de bajo nivel. No es ejecutable.</td>
+      </tr>
+      <tr>
+        <td><strong>Código ejecutable</strong></td>
+        <td>Resultado del enlazado con librerías. Puede ejecutarse en el ordenador.</td>
+      </tr>
+    </table>
+
+    <p><strong>Clave:</strong> El código objeto no lo entiende ni el programador ni directamente la máquina.</p>
+
+  </section>
+
+<br>
+<hr>
+<br>
+
+  <!-- ========================== -->
+  <!-- 1.3.2 COMPILACIÓN -->
+  <!-- ========================== -->
+
+  <section>
+
+    <h3>1.3.2 Compilación</h3>
+
+    <p><strong>La compilación convierte el código fuente en código objeto.</strong></p>
+
+    <h4>Proceso general</h4>
+
+    <pre><code>
+    Programa Fuente
+          │
+          ▼
+      COMPILADOR
+          │
+      ¿Errores?
+        │       │
+       Sí      No
+        │       ▼
+    (Corregir)  Programa Objeto
+                    │
+                    ▼
+                 ENLAZADOR
+               (+ Librerías)
+                    │
+                    ▼
+            Programa Ejecutable
+    </code></pre>
+
+    <p><strong>Importante:</strong> Si hay errores, no se genera código objeto.</p>
+
+<img src="./" alt="Von Neumann">
+
+    <h4>Fases internas del compilador</h4>
+
+    <table>
+      <tr>
+        <td><strong>Análisis léxico</strong></td>
+        <td>Divide el código en tokens.</td>
+      </tr>
+      <tr>
+        <td><strong>Análisis sintáctico</strong></td>
+        <td>Comprueba que se cumplen las reglas de sintaxis.</td>
+      </tr>
+      <tr>
+        <td><strong>Análisis semántico</strong></td>
+        <td>Verifica coherencia de tipos y operaciones.</td>
+      </tr>
+      <tr>
+        <td><strong>Generación de código intermedio</strong></td>
+        <td>Crea representación intermedia.</td>
+      </tr>
+      <tr>
+        <td><strong>Optimización</strong></td>
+        <td>Mejora el código intermedio.</td>
+      </tr>
+      <tr>
+        <td><strong>Generación de código</strong></td>
+        <td>Produce el programa objeto.</td>
+      </tr>
+    </table>
+
+    <h4>Enlazador</h4>
+
+    <p>Inserta las librerías necesarias en el código objeto para generar el programa ejecutable.</p>
+
+    <p><strong>Claves de examen:</strong></p>
+    <ul>
+      <li>Compilador → genera código objeto.</li>
+      <li>Enlazador → genera ejecutable.</li>
+      <li>Orden de fases: Léxico → Sintáctico → Semántico.</li>
+    </ul>
+
+  </section>
+
+<br>
+<hr>
+<br>
+
+  <!-- ========================== -->
+  <!-- 1.3.3 MÁQUINAS VIRTUALES -->
+  <!-- ========================== -->
+
+  <section>
+
+    <h3>1.3.3 Máquinas virtuales</h3>
+
+    <p><strong>Una máquina virtual es un software capaz de ejecutar programas como si fuese una máquina real.</strong></p>
+
+    <p>Permite un entorno de ejecución independiente del hardware y del sistema operativo.</p>
+
+    <h4>Clasificación</h4>
+
+    <pre><code>
+    Máquinas Virtuales
+    ├── De sistema
+    └── De proceso
+    </code></pre>
+
+    <h4>Máquinas virtuales de sistema</h4>
+    <ul>
+      <li>Virtualizan un sistema operativo completo.</li>
+      <li>Simulan una máquina real.</li>
+      <li>Permiten ejecutar distintos sistemas operativos.</li>
+    </ul>
+
+    <h4>Máquinas virtuales de proceso</h4>
+    <ul>
+      <li>Se ejecutan como proceso dentro del sistema operativo.</li>
+      <li>Soportan un único programa.</li>
+      <li>Se inician al comenzar y finalizan al terminar el programa.</li>
+    </ul>
+
+    <h4>Ejemplo: JVM</h4>
+    <p>Permite ejecutar programas Java en cualquier plataforma.</p>
+
+    <p><strong>Idea clave:</strong> Independencia respecto al hardware.</p>
+
+  </section>
+
+</section>

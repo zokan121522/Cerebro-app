@@ -8,15 +8,58 @@
 
 <style>
 .lang-toggle { margin-top: 20px; }
+
+.release-box {
+  background:#111827;
+  padding:20px 25px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.release-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.release-version {
+  font-weight:600;
+}
+
+.release-current {
+  color:#22c55e;
+}
+
+.release-buttons {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.instructions-section {
+  margin-top:60px;
+  padding:50px 20px;
+  background:#0f172a;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.instruction-card {
+  flex:1 1 340px;
+  max-width:440px;
+  background:#111827;
+  padding:25px;
+  border-radius:12px;
+}
 </style>
-<!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-30PHQ2P84F"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-30PHQ2P84F');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-30PHQ2P84F');
 </script>
 
 <script>
@@ -24,8 +67,6 @@ function switchLang(lang) {
   document.querySelectorAll("[data-es]").forEach(el => {
     const content = el.getAttribute("data-" + lang);
     if (!content) return;
-
-    // Si contiene HTML, usar innerHTML
     if (content.includes("<")) {
       el.innerHTML = content;
     } else {
@@ -54,10 +95,7 @@ window.onload = () => switchLang("es");
 </header>
 
 <section class="features">
-  <h2 
-    data-es="¿Qué es CEREBRO?"
-    data-en="What is CEREBRO?">
-  </h2>
+  <h2 data-es="¿Qué es CEREBRO?" data-en="What is CEREBRO?"></h2>
 
   <p 
     data-es="CEREBRO es una aplicación de escritorio modular diseñada para centralizar estudio, ejecución profesional y organización mental en un único sistema."
@@ -65,160 +103,137 @@ window.onload = () => switchLang("es");
   </p>
 
   <div class="feature-grid">
-
     <div class="feature-card">
-      <h3>📅 
-        <span data-es="Sistema de Agenda" data-en="Agenda System"></span>
-      </h3>
-      <p 
-        data-es="Registra sesiones reales, mide tiempo efectivo y analiza el progreso semanal."
-        data-en="Track real sessions, measure effective time and monitor weekly performance.">
-      </p>
+      <h3>📅 <span data-es="Sistema de Agenda" data-en="Agenda System"></span></h3>
+      <p data-es="Registra sesiones reales, mide tiempo efectivo y analiza el progreso semanal."
+         data-en="Track real sessions, measure effective time and monitor weekly performance."></p>
     </div>
 
     <div class="feature-card">
-      <h3>📚 
-        <span data-es="Sistema de Aprendizaje" data-en="Learning System"></span>
-      </h3>
-      <p 
-        data-es="Cursos estructurados con bloques de contenido y ejercicios integrados."
-        data-en="Structured courses with content blocks and integrated exercises.">
-      </p>
+      <h3>📚 <span data-es="Sistema de Aprendizaje" data-en="Learning System"></span></h3>
+      <p data-es="Cursos estructurados con bloques de contenido y ejercicios integrados."
+         data-en="Structured courses with content blocks and integrated exercises."></p>
     </div>
 
     <div class="feature-card">
-      <h3>🗂 
-        <span data-es="Motor de Workflow" data-en="Workflow Engine"></span>
-      </h3>
-      <p 
-        data-es="Gestión de trabajo profesional dentro del mismo ecosistema."
-        data-en="Professional task management inside the ecosystem.">
-      </p>
+      <h3>🗂 <span data-es="Motor de Workflow" data-en="Workflow Engine"></span></h3>
+      <p data-es="Gestión de trabajo profesional dentro del mismo ecosistema."
+         data-en="Professional task management inside the ecosystem."></p>
     </div>
 
     <div class="feature-card">
-      <h3>🧠 
-        <span data-es="Sistema de Prompts" data-en="Prompts System"></span>
-      </h3>
-      <p 
-        data-es="Rutinas mentales reutilizables y pensamiento estructurado."
-        data-en="Reusable mental routines and structured thinking logic.">
-      </p>
+      <h3>🧠 <span data-es="Sistema de Prompts" data-en="Prompts System"></span></h3>
+      <p data-es="Rutinas mentales reutilizables y pensamiento estructurado."
+         data-en="Reusable mental routines and structured thinking logic."></p>
     </div>
 
     <div class="feature-card">
-      <h3>💻 
-        <span data-es="Módulo de Algoritmia (Próximamente)" data-en="Algorithm Module (Coming Soon)"></span>
-      </h3>
-      <p 
-        data-es="Espacio dedicado a entrenamiento técnico disponible en próximas actualizaciones."
-        data-en="Dedicated technical training space available in future updates.">
-      </p>
+      <h3>💻 <span data-es="Módulo de Algoritmia (Próximamente)" data-en="Algorithm Module (Coming Soon)"></span></h3>
+      <p data-es="Espacio dedicado a entrenamiento técnico disponible en próximas actualizaciones."
+         data-en="Dedicated technical training space available in future updates."></p>
     </div>
-
   </div>
 </section>
 
 <section id="download" class="download">
 
-  <h2 data-es="Descargar" data-en="Download"></h2>
+  <h2 data-es="Versiones Estables" data-en="Stable Releases"></h2>
 
-  <h3 data-es="Última versión estable" data-en="Latest stable version"></h3>
+  <!-- ========================= -->
+  <!-- VERSION ACTUAL ESTABLE -->
+  <!-- ========================= -->
 
-  <p data-es="Versión portable (no requiere instalación)" 
-     data-en="Portable version (no installation required)"></p>
-
-  <div style="display:flex; flex-wrap:wrap; gap:40px; margin-top:50px; justify-content:center;">
-
-<!-- WINDOWS CARD -->
-<div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
-
-  <h3 data-es="🪟 Windows" data-en="🪟 Windows"></h3>
-
-<a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-Windows.zip"
-   class="btn stable"
-   style="display:inline-block; margin-bottom:30px;"
-   data-es="Descargar"
-   data-en="Download"
-   onclick="gtag('event', 'download_windows', {
-     event_category: 'download',
-     event_label: 'windows'
-   });">
-</a>
-
-
-  <div style="opacity:0.85; line-height:1.7;"
-       data-es="1️⃣ Descomprime el archivo .zip<br>
-                2️⃣ Ejecuta CEREBRO<br>
-                3️⃣ Si Windows muestra 'Windows protected your PC':<br>
-                &nbsp;&nbsp;&nbsp;• Pulsa 'More info'<br>
-                &nbsp;&nbsp;&nbsp;• Luego 'Run anyway'<br>
-                4️⃣ Puedes mover la carpeta donde quieras"
-       data-en="1️⃣ Extract the .zip file<br>
-                2️⃣ Run CEREBRO<br>
-                3️⃣ If Windows shows 'Windows protected your PC':<br>
-                &nbsp;&nbsp;&nbsp;• Click 'More info'<br>
-                &nbsp;&nbsp;&nbsp;• Then 'Run anyway'<br>
-                4️⃣ You can move the folder anywhere you like">
-  </div>
-
-</div>
-
-    <!-- MAC CARD -->
-    <div style="flex:1 1 340px; max-width:440px; background:#111827; padding:35px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.4);">
-
-      <h3 data-es="🍎 macOS" data-en="🍎 macOS"></h3>
-
-      <a href="https://github.com/zokan121522/studyFlow/releases/latest/download/CEREBRO-macOS.zip"
-   class="btn stable"
-   style="display:inline-block; margin-bottom:30px;"
-   data-es="Descargar"
-   data-en="Download"
-   onclick="gtag('event', 'download_macos', {
-     event_category: 'download',
-     event_label: 'macos'
-   });">
-</a>
-
-      <div style="opacity:0.85; line-height:1.7;"
-           data-es="1️⃣ Descomprime el archivo .zip<br>
-                    2️⃣ Abre Terminal en la carpeta donde esté CEREBRO.app<br>
-                    3️⃣ Ejecuta el siguiente comando:"
-           data-en="1️⃣ Extract the .zip file<br>
-                    2️⃣ Open Terminal in the folder containing CEREBRO.app<br>
-                    3️⃣ Run the following command:">
+  <div style="background:#111827; padding:18px 22px; border-radius:12px; margin-top:25px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      
+      <div style="font-weight:600;">
+        <span style="color:#22c55e;">●</span>
+        v1.11.4
+        <span style="font-size:0.8rem; opacity:0.6;">(Actual Estable)</span>
       </div>
 
-      <div style="margin:15px 0;">
-        <code style="background:#000; padding:8px 14px; border-radius:8px; display:inline-block;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.11.4/CEREBRO-Windows.zip"
+           class="btn stable">🪟 Windows</a>
+
+        <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.11.4/CEREBRO-macOS.zip"
+           class="btn stable">🍎 macOS</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- VERSION ESTABLE ANTERIOR -->
+  <!-- ========================= -->
+
+  <div style="background:#1f2937; padding:16px 22px; border-radius:12px; margin-top:15px; opacity:0.85;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+      
+      <div style="font-weight:500;">
+        v1.10.0
+        <span style="font-size:0.8rem; opacity:0.6;">(Estable anterior)</span>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.10.0/CEREBRO-Windows.zip"
+           class="btn">🪟 Windows</a>
+
+        <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.10.0/CEREBRO-macOS.zip"
+           class="btn">🍎 macOS</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="instructions-section">
+
+  <h2 style="text-align:center; margin-bottom:40px;"
+      data-es="Cómo ejecutar CEREBRO"
+      data-en="How to run CEREBRO">
+  </h2>
+
+  <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+
+    <div class="instruction-card">
+      <h3>🪟 Windows</h3>
+      <div style="opacity:0.85; line-height:1.6;">
+        1️⃣ Descomprime el .zip<br>
+        2️⃣ Ejecuta CEREBRO<br>
+        3️⃣ Si aparece "Windows protected your PC":<br>
+        &nbsp;&nbsp;&nbsp;• More info<br>
+        &nbsp;&nbsp;&nbsp;• Run anyway
+      </div>
+    </div>
+
+    <div class="instruction-card">
+      <h3>🍎 macOS</h3>
+      <div style="opacity:0.85; line-height:1.6;">
+        1️⃣ Descomprime el .zip<br>
+        2️⃣ Abre Terminal<br>
+        3️⃣ Ejecuta:
+      </div>
+
+      <div style="margin:12px 0;">
+        <code style="background:#000; padding:6px 12px; border-radius:8px; display:inline-block;">
           xattr -cr CEREBRO.app
         </code>
       </div>
 
-      <div style="opacity:0.85; line-height:1.7;"
-           data-es="4️⃣ Después podrás abrir la app con doble click<br>
-                    5️⃣ Puedes moverla al Escritorio o a Aplicaciones"
-           data-en="4️⃣ After that, you can open the app with double click<br>
-                    5️⃣ You can move it to Desktop or Applications">
+      <div style="opacity:0.85; line-height:1.6;">
+        4️⃣ Abre la app normalmente
       </div>
-
     </div>
 
   </div>
 
-  <p style="margin-top:50px; opacity:0.6;"
-     data-es="Release oficial generada automáticamente mediante CI/CD."
-     data-en="Official production release built via automated CI pipeline.">
-  </p>
-
 </section>
 
-<section class="community" style="margin-top:100px; text-align:center; padding:60px 20px; background:#0f172a; border-top:1px solid rgba(255,255,255,0.05);">
+<section class="community" style="margin-top:60px; text-align:center; padding:60px 20px; background:#0f172a; border-top:1px solid rgba(255,255,255,0.05);">
 
-  <h2 
-    data-es="Comunidad y Feedback"
-    data-en="Community & Feedback">
-  </h2>
+  <h2 data-es="Comunidad y Feedback" data-en="Community & Feedback"></h2>
 
   <p style="max-width:700px; margin:20px auto 40px auto; opacity:0.8;"
      data-es="CEREBRO evoluciona constantemente. Puedes proponer mejoras, reportar errores o sugerir nuevas funcionalidades."
@@ -232,11 +247,6 @@ window.onload = () => switchLang("es");
      data-es="Ir a la Comunidad"
      data-en="Go to Community">
   </a>
-
-  <p style="margin-top:25px; opacity:0.6; font-size:0.9rem;"
-     data-es="Todas las sugerencias son moderadas."
-     data-en="All suggestions are moderated.">
-  </p>
 
 </section>
 

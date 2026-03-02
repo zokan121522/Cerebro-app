@@ -83,26 +83,26 @@ body{
 }
 
 .guide-container{
-  max-width:1100px;
+  max-width:1200px;
   margin:0 auto;
-  padding:60px 20px;
+  padding:60px 30px;
 }
 
 .guide-section{
-  margin-bottom:80px;
-  padding:40px;
+  margin-bottom:60px;
+  padding:50px;
   background:#111827;
-  border-radius:16px;
+  border-radius:18px;
 }
 
 .guide-images{
   display:flex;
   flex-wrap:wrap;
-  gap:30px;
+  gap:25px;
 }
 
 .guide-images figure{
-  flex:1 1 400px;
+  flex:1 1 480px;
   margin:0;
 }
 
@@ -124,21 +124,28 @@ body{
     left:0;
     width:100%;
     height:auto;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
     padding:15px;
     border-right:none;
     border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:2000;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
   }
 
-  .guide-nav a{
-    flex:1 1 auto;
+  /* Inicio arriba solo */
+  .guide-nav a:first-child{
+    width:100%;
     text-align:center;
-    font-size:.8rem;
-    padding:8px;
+    font-weight:600;
+  }
+
+  /* Resto botones */
+  .guide-nav a{
+    width:100%;
+    text-align:center;
+    font-size:.9rem;
+    padding:10px;
   }
 
   .nav-title{
@@ -146,27 +153,40 @@ body{
   }
 
   .nav-lang{
-    width:100%;
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:12px;
     border-top:none;
-    padding-top:0;
     margin-top:10px;
+    padding-top:0;
   }
 
   .nav-lang button{
     width:auto;
-    padding:6px 12px;
+    padding:6px 14px;
   }
 
   .content-wrapper{
     margin-left:0;
-    padding-top:140px;
+    padding-top:260px;
   }
 
+  .guide-container{
+    padding:30px 18px;
+  }
+
+  .guide-section{
+    padding:30px 20px;
+  }
+
+  /* IMAGENES MÁS COMPACTAS */
   .guide-images{
     flex-direction:column;
+    gap:18px;
+  }
+
+  .guide-images figure{
+    flex:1 1 auto;
   }
 
 }
@@ -218,6 +238,11 @@ window.addEventListener("DOMContentLoaded",()=>{
     data-en="Complete User Guide"
     style="text-align:center; margin-bottom:40px;">
 </h1>
+
+
+<!-- ===================== -->
+<!-- STUDYFLOW -->
+<!-- ===================== -->
 
 <section class="guide-section" id="studyflow">
 <h2 data-es="StudyFlow · Sistema de Aprendizaje Modular"
@@ -544,7 +569,6 @@ window.addEventListener("DOMContentLoaded",()=>{
   </div>
 
 </section>
-</main>
 </main>
 
 <footer>

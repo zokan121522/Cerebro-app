@@ -14,40 +14,63 @@ body{
 }
 
 /* ========================= */
-/* NAV */
+/* NAV DESKTOP (SIDEBAR) */
 /* ========================= */
 
 .guide-nav{
   width:240px;
   background:#111827;
-  padding:40px 20px;
+  padding:30px 20px;
   border-right:1px solid rgba(255,255,255,0.05);
   position:fixed;
   height:100vh;
   overflow-y:auto;
-}
-
-.guide-nav h3{
-  margin-bottom:30px;
-  font-size:1rem;
-  opacity:.6;
-  text-transform:uppercase;
-  letter-spacing:1px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .guide-nav a{
   display:block;
-  padding:12px 15px;
-  margin-bottom:10px;
+  padding:10px 14px;
   border-radius:8px;
   text-decoration:none;
   color:#fff;
   background:#1f2937;
   transition:.2s;
-  font-size:.95rem;
+  font-size:.9rem;
 }
 
 .guide-nav a:hover{
+  background:#2563eb;
+}
+
+.nav-title{
+  font-size:.8rem;
+  opacity:.6;
+  margin:10px 0;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.nav-lang{
+  margin-top:auto;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-lang button{
+  width:100%;
+  margin-bottom:8px;
+  padding:8px;
+  border:none;
+  border-radius:6px;
+  background:#1f2937;
+  color:#fff;
+  cursor:pointer;
+}
+
+.nav-lang button:hover{
   background:#2563eb;
 }
 
@@ -72,16 +95,6 @@ body{
   border-radius:16px;
 }
 
-.guide-section h2{
-  margin-bottom:20px;
-}
-
-.guide-section p{
-  opacity:.85;
-  margin-bottom:30px;
-  max-width:800px;
-}
-
 .guide-images{
   display:flex;
   flex-wrap:wrap;
@@ -99,83 +112,57 @@ body{
   border:1px solid rgba(255,255,255,0.05);
 }
 
-.guide-images figcaption{
-  margin-top:10px;
-  font-size:.9rem;
-  opacity:.7;
-}
-
 /* ========================= */
-/* LANGUAGE */
-/* ========================= */
-
-.lang-toggle{
-  position:sticky;
-  top:0;
-  background:#111827;
-  padding:15px 0;
-  z-index:1000;
-  text-align:center;
-}
-
-.lang-toggle button{
-  padding:8px 16px;
-  margin:0 5px;
-  border-radius:6px;
-  border:none;
-  background:#1f2937;
-  color:#fff;
-  cursor:pointer;
-}
-
-.lang-toggle button:hover{
-  background:#2563eb;
-}
-
-/* ========================= */
-/* FOOTER */
-/* ========================= */
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  border-top:1px solid rgba(255,255,255,0.05);
-}
-
-/* ========================= */
-/* MOBILE RESPONSIVE */
+/* MOBILE VERSION */
 /* ========================= */
 
 @media (max-width: 900px){
 
   .guide-nav{
-    position:relative;
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:auto;
-    display:flex;
+    flex-direction:row;
     flex-wrap:wrap;
-    gap:10px;
+    justify-content:center;
+    gap:8px;
+    padding:15px;
     border-right:none;
     border-bottom:1px solid rgba(255,255,255,0.05);
-  }
-
-  .guide-nav h3{
-    width:100%;
-    margin-bottom:10px;
+    z-index:2000;
   }
 
   .guide-nav a{
     flex:1 1 auto;
     text-align:center;
-    margin-bottom:0;
+    font-size:.8rem;
+    padding:8px;
+  }
+
+  .nav-title{
+    display:none;
+  }
+
+  .nav-lang{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    border-top:none;
+    padding-top:0;
+    margin-top:10px;
+  }
+
+  .nav-lang button{
+    width:auto;
+    padding:6px 12px;
   }
 
   .content-wrapper{
     margin-left:0;
-  }
-
-  .guide-section{
-    padding:25px;
+    padding-top:140px;
   }
 
   .guide-images{
@@ -205,17 +192,22 @@ window.addEventListener("DOMContentLoaded",()=>{
 <nav class="guide-nav">
 
   <a href="index.html"
-     data-es="🏠 Página Principal"
+     data-es="🏠 Inicio"
      data-en="🏠 Home">
-     🏠 Página Principal
+     🏠 Inicio
   </a>
 
-  <h3 data-es="Guía" data-en="Guide">Guía</h3>
+  <div class="nav-title" data-es="Guía" data-en="Guide">Guía</div>
 
   <a href="#studyflow" data-es="📘 StudyFlow" data-en="📘 StudyFlow">📘 StudyFlow</a>
   <a href="#agenda" data-es="📅 Agenda" data-en="📅 Agenda">📅 Agenda</a>
   <a href="#prompts" data-es="🧠 Prompts" data-en="🧠 Prompts">🧠 Prompts</a>
   <a href="#workflow" data-es="⚙️ Workflow" data-en="⚙️ Workflow">⚙️ Workflow</a>
+
+  <div class="nav-lang">
+    <button onclick="switchLang('es')">Español</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
 
 </nav>
 
@@ -224,13 +216,8 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 <h1 data-es="Guía Completa de Uso"
     data-en="Complete User Guide"
-    style="margin-bottom:30px; text-align:center;">
+    style="text-align:center; margin-bottom:40px;">
 </h1>
-
-<div class="lang-toggle">
-  <button onclick="switchLang('es')">Español</button>
-  <button onclick="switchLang('en')">English</button>
-</div>
 
 <section class="guide-section" id="studyflow">
 <h2 data-es="StudyFlow · Sistema de Aprendizaje Modular"
@@ -558,13 +545,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 </section>
 </main>
-
-<footer>
-  <p>© 2026 CEREBRO — Built by Jaime Vilaplana.</p>
-</footer>
-
-</div>
-
 </main>
 
 <footer>

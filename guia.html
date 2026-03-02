@@ -6,6 +6,12 @@
 <title>CEREBRO · Guía</title>
 
 <style>
+
+/* RESET INTELIGENTE */
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   background:#0f172a;
@@ -20,20 +26,20 @@ body{
 .guide-nav{
   width:240px;
   background:#111827;
-  padding:30px 20px;
+  padding:28px 18px;
   border-right:1px solid rgba(255,255,255,0.05);
   position:fixed;
   height:100vh;
   overflow-y:auto;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
 }
 
 .guide-nav a{
   display:block;
-  padding:10px 14px;
-  border-radius:8px;
+  padding:9px 12px;
+  border-radius:10px;
   text-decoration:none;
   color:#fff;
   background:#1f2937;
@@ -46,28 +52,32 @@ body{
 }
 
 .nav-title{
-  font-size:.8rem;
+  font-size:.75rem;
   opacity:.6;
-  margin:10px 0;
+  margin:8px 0 4px 0;
   text-transform:uppercase;
   letter-spacing:1px;
 }
 
+/* BOTONES IDIOMA BIEN ALINEADOS */
 .nav-lang{
-  margin-top:auto;
-  padding-top:20px;
+  margin-top:20px;
+  padding-top:16px;
   border-top:1px solid rgba(255,255,255,0.05);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
 }
 
 .nav-lang button{
   width:100%;
-  margin-bottom:8px;
-  padding:8px;
+  padding:9px;
   border:none;
-  border-radius:6px;
+  border-radius:10px;
   background:#1f2937;
   color:#fff;
   cursor:pointer;
+  transition:.2s;
 }
 
 .nav-lang button:hover{
@@ -85,24 +95,26 @@ body{
 .guide-container{
   max-width:1200px;
   margin:0 auto;
-  padding:60px 30px;
+  padding:50px 28px;
 }
 
 .guide-section{
-  margin-bottom:60px;
-  padding:50px;
+  margin-bottom:40px;
+  padding:32px 28px;
   background:#111827;
   border-radius:18px;
 }
 
+/* IMÁGENES MÁS COMPACTAS */
 .guide-images{
   display:flex;
   flex-wrap:wrap;
-  gap:25px;
+  gap:16px;
+  margin-top:18px;
 }
 
 .guide-images figure{
-  flex:1 1 480px;
+  flex:1 1 460px;
   margin:0;
 }
 
@@ -110,6 +122,14 @@ body{
   width:100%;
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.05);
+  display:block;
+}
+
+.guide-images figcaption{
+  margin-top:8px;
+  font-size:.9rem;
+  line-height:1.4;
+  opacity:.9;
 }
 
 /* ========================= */
@@ -118,33 +138,27 @@ body{
 
 @media (max-width: 900px){
 
-  
-  /* NAV CON GRID REAL */
   .guide-nav{
-    box-sizing:border-box;
     height:auto;
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    background:#111827;
     padding:14px 12px 16px;
     border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:2000;
 
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap:12px;
+    gap:10px;
   }
 
-  /* INICIO ocupa toda la fila */
   .guide-nav a:first-child{
     grid-column:1 / span 2;
   }
 
-  /* Estilo compacto tipo index */
   .guide-nav a{
-    height:44px;
+    height:42px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -152,53 +166,46 @@ body{
     font-size:.85rem;
     border-radius:14px;
     padding:0 10px;
-    background:#1f2937;
   }
 
   .nav-title{
     display:none;
   }
 
-  /* Idiomas ocupan fila completa */
   .nav-lang{
     grid-column:1 / span 2;
     display:flex;
     justify-content:center;
-    gap:14px;
+    gap:12px;
     margin-top:4px;
     border:none;
     padding:0;
   }
 
   .nav-lang button{
-    height:44px;
-    padding:0 20px;
+    height:42px;
+    padding:0 18px;
     border-radius:14px;
   }
 
-  /* IMPORTANTE: ajustar contenido */
   .content-wrapper{
     margin-left:0;
-    padding-top:230px; /* altura real del nav */
+    padding-top:210px;
   }
 
   .guide-container{
-  padding:20px 14px;
+    padding:22px 14px;
   }
 
   .guide-section{
-    padding:24px 18px;
+    padding:20px 16px;
+    margin-bottom:28px;
   }
 
-.guide-images{
-  flex-direction:column;
-  gap:10px;
-}
-
-.guide-section{
-  padding:18px 14px;
-  margin-bottom:30px;
-}
+  .guide-images{
+    flex-direction:column;
+    gap:12px;
+  }
 }
 
 </style>
@@ -224,9 +231,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
   <a href="index.html"
      data-es="🏠 Inicio"
-     data-en="🏠 Home">
-     🏠 Inicio
-  </a>
+     data-en="🏠 Home">🏠 Inicio</a>
 
   <div class="nav-title" data-es="Guía" data-en="Guide">Guía</div>
 
@@ -244,7 +249,6 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 <div class="content-wrapper">
 <main class="guide-container">
-
 
 <!-- ===================== -->
 <!-- STUDYFLOW -->
@@ -576,10 +580,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 
 </section>
 
-<footer>
-  <p>© 2026 CEREBRO — Built by Jaime Vilaplana.</p>
-</footer>
-
+</main>
 </div>
 
 </body>

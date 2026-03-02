@@ -121,13 +121,14 @@ body{
   
   /* NAV CON GRID REAL */
   .guide-nav{
+    box-sizing:border-box;
     height:auto;
     position:fixed;
     top:0;
     left:0;
     width:100%;
     background:#111827;
-    padding:16px 14px 18px;
+    padding:14px 12px 16px;
     border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:2000;
 
@@ -182,17 +183,22 @@ body{
   }
 
   .guide-container{
-    padding:30px 16px;
+  padding:20px 14px;
   }
 
   .guide-section{
     padding:24px 18px;
   }
 
-  .guide-images{
-    flex-direction:column;
-    gap:14px;
-  }
+.guide-images{
+  flex-direction:column;
+  gap:10px;
+}
+
+.guide-section{
+  padding:18px 14px;
+  margin-bottom:30px;
+}
 }
 
 </style>

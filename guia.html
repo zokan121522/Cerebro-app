@@ -7,7 +7,6 @@
 
 <style>
 
-/* RESET INTELIGENTE */
 *{
   box-sizing:border-box;
 }
@@ -20,7 +19,7 @@ body{
 }
 
 /* ========================= */
-/* NAV DESKTOP (SIDEBAR) */
+/* NAV DESKTOP */
 /* ========================= */
 
 .guide-nav{
@@ -59,7 +58,6 @@ body{
   letter-spacing:1px;
 }
 
-/* BOTONES IDIOMA BIEN ALINEADOS */
 .nav-lang{
   margin-top:20px;
   padding-top:16px;
@@ -99,18 +97,19 @@ body{
 }
 
 .guide-section{
-  margin-bottom:40px;
-  padding:32px 28px;
+  margin-bottom:36px;
+  padding:30px 24px;
   background:#111827;
   border-radius:18px;
 }
 
 /* IMÁGENES MÁS COMPACTAS */
+
 .guide-images{
   display:flex;
   flex-wrap:wrap;
-  gap:16px;
-  margin-top:18px;
+  gap:14px;
+  margin-top:14px;
 }
 
 .guide-images figure{
@@ -126,31 +125,30 @@ body{
 }
 
 .guide-images figcaption{
-  margin-top:8px;
+  margin-top:6px;
   font-size:.9rem;
-  line-height:1.4;
+  line-height:1.35;
   opacity:.9;
 }
 
 /* ========================= */
-/* MOBILE VERSION */
+/* MOBILE */
 /* ========================= */
 
 @media (max-width: 900px){
 
   .guide-nav{
-    height:auto;
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    padding:14px 12px 16px;
+    padding:12px;
     border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:2000;
 
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap:10px;
+    gap:8px;
   }
 
   .guide-nav a:first-child{
@@ -158,53 +156,63 @@ body{
   }
 
   .guide-nav a{
-    height:42px;
+    height:40px;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
     font-size:.85rem;
     border-radius:14px;
-    padding:0 10px;
+    padding:0 8px;
   }
 
   .nav-title{
     display:none;
   }
 
+  /* 🔥 IDIOMAS LADO A LADO */
   .nav-lang{
     grid-column:1 / span 2;
     display:flex;
-    justify-content:center;
-    gap:12px;
+    flex-direction:row;
+    gap:8px;
     margin-top:4px;
     border:none;
     padding:0;
   }
 
   .nav-lang button{
-    height:42px;
-    padding:0 18px;
+    width:50%;
+    height:40px;
     border-radius:14px;
+    padding:0;
   }
 
   .content-wrapper{
     margin-left:0;
-    padding-top:210px;
+    padding-top:200px;
   }
 
   .guide-container{
-    padding:22px 14px;
+    padding:18px 12px;
   }
 
   .guide-section{
-    padding:20px 16px;
-    margin-bottom:28px;
+    padding:18px 14px;
+    margin-bottom:24px;
   }
 
+  /* 🔥 IMÁGENES MUCHO MÁS JUNTAS */
   .guide-images{
     flex-direction:column;
-    gap:12px;
+    gap:8px;
+  }
+
+  .guide-images figure{
+    margin-bottom:4px;
+  }
+
+  .guide-images figcaption{
+    margin-top:4px;
   }
 }
 
@@ -235,10 +243,10 @@ window.addEventListener("DOMContentLoaded",()=>{
 
   <div class="nav-title" data-es="Guía" data-en="Guide">Guía</div>
 
-  <a href="#studyflow" data-es="📘 StudyFlow" data-en="📘 StudyFlow">📘 StudyFlow</a>
-  <a href="#agenda" data-es="📅 Agenda" data-en="📅 Agenda">📅 Agenda</a>
-  <a href="#prompts" data-es="🧠 Prompts" data-en="🧠 Prompts">🧠 Prompts</a>
-  <a href="#workflow" data-es="⚙️ Workflow" data-en="⚙️ Workflow">⚙️ Workflow</a>
+  <a href="#studyflow">📘 StudyFlow</a>
+  <a href="#agenda">📅 Agenda</a>
+  <a href="#prompts">🧠 Prompts</a>
+  <a href="#workflow">⚙️ Workflow</a>
 
   <div class="nav-lang">
     <button onclick="switchLang('es')">Español</button>

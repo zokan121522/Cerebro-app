@@ -118,41 +118,28 @@ body{
 
 @media (max-width: 900px){
 
+  /* NAV CON GRID REAL */
   .guide-nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     background:#111827;
-    padding:14px 12px 16px 12px;
+    padding:16px 14px 18px;
     border-bottom:1px solid rgba(255,255,255,0.05);
     z-index:2000;
 
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-
-    box-shadow:0 6px 20px rgba(0,0,0,0.45);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:12px;
   }
 
-  /* INICIO centrado arriba */
+  /* INICIO ocupa toda la fila */
   .guide-nav a:first-child{
-    align-self:center;
-    width:90%;
+    grid-column:1 / span 2;
   }
 
-  /* Grid compacto 2x2 */
-  .guide-nav a[href="#studyflow"],
-  .guide-nav a[href="#agenda"],
-  .guide-nav a[href="#prompts"],
-  .guide-nav a[href="#workflow"]{
-    width:48%;
-  }
-
-  .guide-nav{
-    flex-wrap:wrap;
-  }
-
+  /* Estilo compacto tipo index */
   .guide-nav a{
     height:44px;
     display:flex;
@@ -160,55 +147,44 @@ body{
     justify-content:center;
     text-align:center;
     font-size:.85rem;
-    border-radius:12px;
-    background:#1f2937;
-    font-weight:500;
+    border-radius:14px;
     padding:0 10px;
-  }
-
-  /* Contenedor interno tipo fila doble */
-  .guide-nav{
-    align-items:center;
-  }
-
-  /* Para que los 4 se comporten como grid */
-  .guide-nav a:nth-child(3),
-  .guide-nav a:nth-child(4),
-  .guide-nav a:nth-child(5),
-  .guide-nav a:nth-child(6){
-    display:inline-flex;
+    background:#1f2937;
   }
 
   .nav-title{
     display:none;
   }
 
+  /* Idiomas ocupan fila completa */
   .nav-lang{
+    grid-column:1 / span 2;
     display:flex;
     justify-content:center;
-    gap:12px;
-    margin-top:6px;
+    gap:14px;
+    margin-top:4px;
     border:none;
+    padding:0;
   }
 
   .nav-lang button{
     height:44px;
-    padding:0 18px;
-    border-radius:12px;
+    padding:0 20px;
+    border-radius:14px;
   }
 
+  /* IMPORTANTE: ajustar contenido */
   .content-wrapper{
     margin-left:0;
-    padding-top:190px;
+    padding-top:230px; /* altura real del nav */
   }
 
   .guide-container{
-    max-width:100%;
-    padding:25px 15px;
+    padding:30px 16px;
   }
 
   .guide-section{
-    padding:22px 18px;
+    padding:24px 18px;
   }
 
   .guide-images{

@@ -7,7 +7,13 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-.lang-toggle { margin-top: 20px; }
+.lang-toggle {
+  position: sticky;
+  top: 0;
+  background: #111827;
+  padding: 15px 0;
+  z-index: 2000;
+}
 
 .release-box {
   background:#111827;
@@ -83,16 +89,16 @@ window.onload = () => switchLang("es");
 <header class="hero">
   <h1>CEREBRO</h1>
 
-  <div class="lang-toggle">
-    <button onclick="switchLang('es')" class="btn">Español</button>
-    <button onclick="switchLang('en')" class="btn">English</button>
-  </div>
 
   <p 
     data-es="Tu sistema operativo personal para estudiar y ejecutar con estructura."
     data-en="Your personal operating system for structured study and execution.">
   </p>
 </header>
+  <div class="lang-toggle" style="text-align: center;">
+    <button onclick="switchLang('es')" class="btn">Español</button>
+    <button onclick="switchLang('en')" class="btn">English</button>
+  </div>
 
 <section class="features">
   <h2 data-es="¿Qué es CEREBRO?" data-en="What is CEREBRO?"></h2>
@@ -133,6 +139,32 @@ window.onload = () => switchLang("es");
          data-en="Dedicated technical training space available in future updates."></p>
     </div>
   </div>
+</section>
+
+<!-- ===================== -->
+<!-- GUIA COMPLETA -->
+<!-- ===================== -->
+
+<section style="margin-top:60px; padding:70px 20px; text-align:center; background:linear-gradient(135deg,#111827,#1f2937); border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
+
+  <h2 data-es="Descubre el sistema completo"
+      data-en="Discover the complete system">
+  </h2>
+
+  <p style="max-width:750px; margin:20px auto 40px auto; opacity:0.85; line-height:1.6;"
+     data-es="Explora la guía visual paso a paso y entiende cómo conectar Agenda, StudyFlow, Workflow y Prompts en un único sistema operativo personal. Si quieres usar CEREBRO en serio, empieza aquí."
+     data-en="Explore the step-by-step visual guide and understand how Agenda, StudyFlow, Workflow and Prompts connect into one personal operating system. If you want to use CEREBRO seriously, start here.">
+  </p>
+
+  <a href="guia.html"
+     class="btn stable"
+     style="padding:16px 34px; font-size:1.05rem; font-weight:600;">
+     📘 
+     <span data-es="Ver Guía Completa"
+           data-en="View Complete Guide">
+     </span>
+  </a>
+
 </section>
 
 <section id="download" class="download">
@@ -197,39 +229,50 @@ v1.22.1
       data-en="How to run CEREBRO">
   </h2>
 
-  <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+<div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
 
-    <div class="instruction-card">
-      <h3>🪟 Windows</h3>
-      <div style="opacity:0.85; line-height:1.6;">
-        1️⃣ Descomprime el .zip<br>
-        2️⃣ Ejecuta CEREBRO<br>
-        3️⃣ Si aparece "Windows protected your PC":<br>
-        &nbsp;&nbsp;&nbsp;• More info<br>
-        &nbsp;&nbsp;&nbsp;• Run anyway
-      </div>
+  <div class="instruction-card">
+    <h3>🪟 Windows</h3>
+    <div style="opacity:0.85; line-height:1.6;"
+         data-es="1️⃣ Descomprime el .zip<br>
+                  2️⃣ Ejecuta CEREBRO<br>
+                  3️⃣ Si aparece &quot;Windows protegió tu PC&quot;:<br>
+                  &nbsp;&nbsp;&nbsp;• Más información<br>
+                  &nbsp;&nbsp;&nbsp;• Ejecutar de todas formas"
+         data-en="1️⃣ Unzip the file<br>
+                  2️⃣ Run CEREBRO<br>
+                  3️⃣ If &quot;Windows protected your PC&quot; appears:<br>
+                  &nbsp;&nbsp;&nbsp;• More info<br>
+                  &nbsp;&nbsp;&nbsp;• Run anyway">
+    </div>
+  </div>
+
+  <div class="instruction-card">
+    <h3>🍎 macOS</h3>
+
+    <div style="opacity:0.85; line-height:1.6;"
+         data-es="1️⃣ Descomprime el .zip<br>
+                  2️⃣ Abre Terminal<br>
+                  3️⃣ Ejecuta:"
+         data-en="1️⃣ Unzip the file<br>
+                  2️⃣ Open Terminal<br>
+                  3️⃣ Run:">
     </div>
 
-    <div class="instruction-card">
-      <h3>🍎 macOS</h3>
-      <div style="opacity:0.85; line-height:1.6;">
-        1️⃣ Descomprime el .zip<br>
-        2️⃣ Abre Terminal<br>
-        3️⃣ Ejecuta:
-      </div>
+    <div style="margin:12px 0;">
+      <code style="background:#000; padding:6px 12px; border-radius:8px; display:inline-block;">
+        xattr -cr CEREBRO.app
+      </code>
+    </div>
 
-      <div style="margin:12px 0;">
-        <code style="background:#000; padding:6px 12px; border-radius:8px; display:inline-block;">
-          xattr -cr CEREBRO.app
-        </code>
-      </div>
-
-      <div style="opacity:0.85; line-height:1.6;">
-        4️⃣ Abre la app normalmente
-      </div>
+    <div style="opacity:0.85; line-height:1.6;"
+         data-es="4️⃣ Abre la app normalmente"
+         data-en="4️⃣ Open the app normally">
     </div>
 
   </div>
+
+</div>
 
 </section>
 

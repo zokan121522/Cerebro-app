@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEREBRO · Guía</title>
+
+<style>
+  .lang-toggle {
+  position: sticky;
+  top: 0;
+  background: #111827;
+  padding: 15px 0;
+  z-index: 1000;
+}
+body{
+  margin:0;
+  display:flex;
+  background:#0f172a;
+  color:#fff;
+  font-family:system-ui,sans-serif;
+}
+
+/* NAV */
+.guide-nav{
+  width:240px;
+  background:#111827;
+  padding:40px 20px;
+  border-right:1px solid rgba(255,255,255,0.05);
+  position:fixed;
+  height:100vh;
+}
+
+.guide-nav h3{
+  margin-bottom:30px;
+  font-size:1rem;
+  opacity:.6;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.guide-nav a{
+  display:block;
+  padding:12px 15px;
+  margin-bottom:10px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#fff;
+  background:#1f2937;
+  transition:.2s;
+  font-size:.95rem;
+}
+
+.guide-nav a:hover{ background:#2563eb; }
+
+/* CONTENT */
+.content-wrapper{
+  margin-left:240px;
+  width:100%;
+}
+
+.guide-container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 20px;
+}
+
+.guide-section{
+  margin-bottom:80px;
+  padding:40px;
+  background:#111827;
+  border-radius:16px;
+}
+
+.guide-section h2{ margin-bottom:20px; }
+
+.guide-section p{
+  opacity:.85;
+  margin-bottom:30px;
+  max-width:800px;
+}
+
+.guide-images{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+.guide-images figure{
+  flex:1 1 400px;
+  margin:0;
+}
+
+.guide-images img{
+  width:100%;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.guide-images figcaption{
+  margin-top:10px;
+  font-size:.9rem;
+  opacity:.7;
+}
+
+/* HERO */
+.hero-section{
+  margin-bottom:80px;
+  padding:60px 40px;
+  background:linear-gradient(135deg,#111827,#1f2937);
+  border-radius:16px;
+  text-align:center;
+}
+
+.lang-toggle{ margin-top:20px; }
+
+.lang-toggle button{
+  padding:8px 16px;
+  margin:0 5px;
+  border-radius:6px;
+  border:none;
+  background:#1f2937;
+  color:#fff;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.lang-toggle button:hover{ background:#2563eb; }
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+</style>
+
+<script>
+function switchLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-es]").forEach(el=>{
+    const text = el.getAttribute("data-"+lang);
+    if(text) el.innerHTML = text;
+  });
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+  switchLang("es");
+});
+</script>
+</head>
+
+<body>
+<nav class="guide-nav">
+
+  <a href="index.html"
+     data-es="🏠 Página Principal"
+     data-en="🏠 Home">
+     🏠 Página Principal
+  </a>
+
+  <h3 data-es="Guía" data-en="Guide">Guía</h3>
+
+  <a href="#studyflow" 
+     data-es="📘 StudyFlow" 
+     data-en="📘 StudyFlow">📘 StudyFlow</a>
+
+  <a href="#agenda" 
+     data-es="📅 Agenda" 
+     data-en="📅 Agenda">📅 Agenda</a>
+
+  <a href="#prompts" 
+     data-es="🧠 Prompts" 
+     data-en="🧠 Prompts">🧠 Prompts</a>
+
+  <a href="#workflow" 
+     data-es="⚙️ Workflow" 
+     data-en="⚙️ Workflow">⚙️ Workflow</a>
+
+</nav>
+
+<div class="content-wrapper">
+<main class="guide-container">
+
+<!-- ===================== -->
+<!-- STUDYFLOW -->
+<!-- ===================== -->
+<h1 data-es="Guía Completa de Uso"
+    data-en="Complete User Guide"
+    style="margin-bottom:30px; text-align:center;">
+</h1>
+
+
+
+<div class="lang-toggle" style="text-align:center; margin-bottom:30px;">
+  <button onclick="switchLang('es')"
+          style="padding:8px 16px; margin:0 5px; border-radius:6px; border:none; background:#1f2937; color:#fff; cursor:pointer;">
+    Español
+  </button>
+
+  <button onclick="switchLang('en')"
+          style="padding:8px 16px; margin:0 5px; border-radius:6px; border:none; background:#1f2937; color:#fff; cursor:pointer;">
+    English
+  </button>
+</div>
+<section class="guide-section" id="studyflow">
+<h2 data-es="StudyFlow · Sistema de Aprendizaje Modular"
+    data-en="StudyFlow · Modular Learning System">
+</h2>
+
+<p data-es="StudyFlow es el núcleo del sistema de aprendizaje de CEREBRO. Permite crear cursos estructurados por bloques, integrar contenido dinámico, añadir ejercicios evaluables y visualizar el progreso real. No es solo un visor de contenido: es un entorno diseñado para estudiar con intención, orden y trazabilidad."
+   data-en="StudyFlow is the core learning engine of CEREBRO. It allows you to create structured courses with modular blocks, integrate dynamic content, add testable exercises and track real progress. It is not just a content viewer — it is an environment built for intentional, organized and traceable learning.">
+</p>
+
+  <div class="guide-images">
+
+    <figure>
+      <img src="assets/studyflow.png">
+      <figcaption 
+        data-es="<strong>Study Flow · Crear Cursos</strong><br>Pantalla principal para generar y gestionar las carátulas de tus cursos. Vista general donde se crean y organizan los cursos."
+        data-en="<strong>Study Flow · Create Courses</strong><br>Main screen to create and manage your course covers. Overview where courses are created and organized.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/addCard.png">
+      <figcaption 
+        data-es="Botón <strong>Add Card</strong> para crear un curso nuevo y acceder a él."
+        data-en="<strong>Add Card</strong> button to create and access a new course.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/cursoEjemplo.png">
+      <figcaption 
+        data-es="<strong>Editar Curso y Añadir Bloques</strong><br>Desde el botón superior derecho puedes editar el curso y estructurarlo por bloques. Accede a Editar curso y añade bloques."
+        data-en="<strong>Edit Course and Add Blocks</strong><br>Use the top-right button to edit and structure the course with blocks. Access Edit course and add blocks.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/añadirBloque.png">
+      <figcaption 
+        data-es="Cuatro tipos de bloque disponibles para estructurar el contenido."
+        data-en="Four block types available to structure content.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/content.png">
+      <figcaption 
+        data-es="<strong>Bloque Content</strong><br>Permite añadir HTML embebido y visualizarlo en tiempo real. Editor HTML y vista previa."
+        data-en="<strong>Content Block</strong><br>Allows embedded HTML with real-time preview. HTML editor and preview.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/ampliarContent.png">
+      <figcaption 
+        data-es="Ampliar y reordenar secciones dentro del bloque Content."
+        data-en="Expand and reorder sections inside the Content block.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/markdown.png">
+      <figcaption 
+        data-es="<strong>Bloque Markdown</strong><br>Crea contenido en Markdown con vista previa y exportación PDF. Escribe y visualiza al instante."
+        data-en="<strong>Markdown Block</strong><br>Create Markdown content with preview and PDF export. Write and preview instantly.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/pdf.png">
+      <figcaption 
+        data-es="<strong>Bloque PDF</strong><br>Enlaza PDFs externos para ampliar el contenido e integrar documentación adicional."
+        data-en="<strong>PDF Block</strong><br>Link external PDFs to extend content and integrate additional documentation.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/Exercises.png">
+      <figcaption 
+        data-es="<strong>Bloque Exercises (JSON)</strong><br>Ideal para aprender conceptos mediante tests estructurados. Añade archivos .json con preguntas."
+        data-en="<strong>Exercises Block (JSON)</strong><br>Ideal for learning concepts through structured tests. Add .json files with questions.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/contesta.png">
+      <figcaption 
+        data-es="<strong>Realizar Test</strong><br>Responde las preguntas del test."
+        data-en="<strong>Take Test</strong><br>Answer the test questions.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/respuesta.png">
+      <figcaption 
+        data-es="Tabla automática con resultados y explicación detallada."
+        data-en="Automatic table with results and detailed explanation.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/preguntasFalladas.png">
+      <figcaption 
+        data-es="<strong>Preguntas Falladas</strong><br>Historial acumulado de errores para reforzar el aprendizaje."
+        data-en="<strong>Wrong Questions</strong><br>Accumulated error history to reinforce learning.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/resumenCard.png">
+      <figcaption 
+        data-es="<strong>Resumen por Card</strong><br>Vista global del rendimiento del curso con estadísticas por tema."
+        data-en="<strong>Summary by Card</strong><br>Global performance overview with statistics by topic.">
+      </figcaption>
+    </figure>
+
+  </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- AGENDA -->
+<!-- ===================== -->
+
+<section class="guide-section" id="agenda">
+
+  <h2 data-es="Agenda · Gestión de Sesiones"
+      data-en="Agenda · Session Management"></h2>
+
+  <p data-es="Sistema de planificación y control real del tiempo efectivo, progreso y versiones."
+     data-en="Planning system to control effective time, progress and versions."></p>
+
+  <div class="guide-images">
+
+    <figure>
+      <img src="assets/agendaView.png" alt="Vista semanal agenda">
+      <figcaption data-es="Tabla semanal con días, sesiones abiertas/cerradas, tiempo perdido, total, efectivo y progreso."
+                  data-en="Weekly table with open/closed sessions, lost time, total, effective time and progress."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/dayView.png" alt="Vista diaria agenda">
+      <figcaption data-es="Al hacer clic en un día accedes a su detalle y puedes añadir sesiones con 'Add Session'."
+                  data-en="Click a day to access its detail and add sessions using 'Add Session'."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/sesionestabla.png" alt="Tabla sesiones del día">
+      <figcaption data-es="Listado completo de sesiones del día seleccionado."
+                  data-en="Full list of sessions for the selected day."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/category.png" alt="Selector de categoría">
+      <figcaption data-es="Selecciona categoría para clasificar correctamente cada sesión."
+                  data-en="Choose a category to properly classify each session."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/hacerPorHacer.png" alt="Hecho y por hacer">
+      <figcaption data-es="Divide trabajo en 'Hecho' y 'Por hacer', gestiona versiones y controla el avance real."
+                  data-en="Split work into 'Done' and 'To do', manage versions and track real progress."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/pause.png" alt="Pausa sesión">
+      <figcaption data-es="Puedes iniciar, pausar o finalizar sesiones. Al pausar se solicita el motivo."
+                  data-en="Start, pause or end sessions. When pausing, a reason is required."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/tablapause.png" alt="Tabla pausas">
+      <figcaption data-es="Las pausas quedan registradas en la tabla con su motivo y duración."
+                  data-en="Pauses are logged with reason and duration in the table."></figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/editTime.png" alt="Editar tiempo">
+      <figcaption data-es="Permite editar manualmente el tiempo si olvidaste cerrar o necesitas ajustar datos."
+                  data-en="Edit time manually if you forgot to stop or need adjustments."></figcaption>
+    </figure>
+
+<figure style="text-align:center;">
+
+  <img src="assets/copybackup.png" 
+       alt="Copiar mover backup"
+       style="max-width:420px; max-height:260px; object-fit:contain; display:block; margin:0 auto;">
+
+  <figcaption 
+    data-es="Copia sesiones, muévelas entre días o realiza backup completo de semanas."
+    data-en="Copy sessions, move them between days or create full weekly backups."
+    style="margin-top:12px;">
+  </figcaption>
+
+</figure>
+
+  </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- PROMPTS -->
+<!-- ===================== -->
+
+<section class="guide-section" id="prompts">
+
+  <h2 data-es="Prompts · Biblioteca Personal (Beta)"
+      data-en="Prompts · Personal Library (Beta)"></h2>
+
+  <p data-es="Sección en fase beta que permite crear, editar y guardar prompts para reutilizarlos fácilmente copiando y pegando en tu IA favorita."
+     data-en="Beta section that allows you to create, edit and save prompts for easy reuse by copying and pasting into your favorite AI."></p>
+
+<div class="guide-images" 
+     style="display:flex; gap:40px; align-items:stretch;">
+
+  <!-- Columna izquierda -->
+  <div style="flex:1; display:flex; flex-direction:column; gap:20px;">
+
+    <figure style="flex:1; margin:0; display:flex; flex-direction:column;">
+      <img src="assets/promps.png" 
+           alt="Vista general prompts"
+           style="width:100%; height:100%; object-fit:contain;">
+      <figcaption data-es="Listado de prompts guardados con título y descripción."
+                  data-en="List of saved prompts with title and description."></figcaption>
+    </figure>
+
+    <figure style="flex:1; margin:0; display:flex; flex-direction:column;">
+      <img src="assets/promptNuevo.png" 
+           alt="Crear nuevo prompt"
+           style="width:100%; height:100%; object-fit:contain;">
+      <figcaption data-es="Botón para generar un nuevo prompt desde cero."
+                  data-en="Button to create a new prompt from scratch."></figcaption>
+    </figure>
+
+    <figure style="flex:1; margin:0; display:flex; flex-direction:column;">
+      <img src="assets/openPrompt.png" 
+           alt="Editar prompt"
+           style="width:100%; height:100%; object-fit:contain;">
+      <figcaption data-es="Accede al prompt para editar título, descripción e instrucciones."
+                  data-en="Access the prompt to edit title, description and instructions."></figcaption>
+    </figure>
+
+  </div>
+
+  <!-- Columna derecha -->
+  <div style="flex:1; display:flex;">
+
+    <figure style="margin:0; width:100%; display:flex; flex-direction:column;">
+      <img src="assets/botonesPrompt.png"
+           alt="Botones gestión prompt"
+           style="width:100%; height:100%; object-fit:contain;">
+      <figcaption data-es="Guardar, borrar, copiar y módulo de notas con '+' para ampliar ideas del prompt."
+                  data-en="Save, delete, copy and notes module with '+' to expand prompt ideas."></figcaption>
+    </figure>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- ===================== -->
+<!-- WORKFLOW -->
+<!-- ===================== -->
+
+<section class="guide-section" id="workflow">
+<h2 data-es="Workflow · Control Total del Desarrollo"
+    data-en="Workflow · Full Development Control">
+</h2>
+
+<p data-es="Sistema centralizado para gestionar ideas, ramas y commits desde una vista global. Permite planificar, documentar, medir tiempos y mantener trazabilidad completa del trabajo técnico sin perder contexto."
+   data-en="Centralized system to manage ideas, branches and commits from a global view. Plan, document, track time and maintain full technical traceability without losing context.">
+</p>
+  <div class="guide-images">
+
+    <figure>
+      <img src="assets/workflow.png">
+      <figcaption 
+        data-es="<strong>Workflow · Gestión global</strong><br>Pantalla principal de control desde una vista de pájaro de todos los proyectos. Permite gestionar ideas, nuevas actualizaciones, ramas y commits mostrando su estado, prioridad, asignación al programador y desde cuándo está abierta cada rama. En <strong>Module Notes</strong> puedes anotar ideas o reportes antes de convertirlos en un informe oficial."
+        data-en="<strong>Workflow · Global Management</strong><br>Main control screen with a bird’s-eye view of all projects. Manage ideas, updates, branches and commits including status, priority, assignment and branch open time. <strong>Module Notes</strong> allows drafting ideas before converting them into an official report.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/notes.png">
+      <figcaption 
+        data-es="<strong>Reporte estructurado</strong><br>Dentro del reporte puedes documentar: problema, idea, implementación, resultado y las <strong>ISSUES</strong> encontradas para justificar el tiempo invertido. Incluye título, rama, commit inicial y commit final. En la parte superior derecha verás una tabla automática con el estatus, tiempos parciales y cálculo del tiempo total."
+        data-en="<strong>Structured Report</strong><br>Inside each report you can manage: problem, idea, implementation, result and <strong>ISSUES</strong> to justify time spent. Includes title, branch, initial commit and final commit. Top-right table displays status changes, time tracking and total time calculation.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/copyPreview.png">
+      <figcaption 
+        data-es="<strong>Preview & Copy</strong><br>Con <strong>Preview Notes</strong> puedes visualizar cómo quedará el reporte completo antes de copiarlo. El botón <strong>Copy</strong> copia exactamente el contenido mostrado en la vista previa para enviarlo o archivarlo fácilmente."
+        data-en="<strong>Preview & Copy</strong><br><strong>Preview Notes</strong> lets you see the full formatted report before copying. The <strong>Copy</strong> button copies exactly what you see for easy sharing or archiving.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/archiveDelete.png">
+      <figcaption 
+        data-es="<strong>Archive & Delete</strong><br>Permite organizar reportes terminados sin saturar la vista principal. <strong>Archive</strong> los mueve a un archivador consultable. <strong>Delete</strong> los envía a una papelera virtual sin eliminarlos definitivamente."
+        data-en="<strong>Archive & Delete</strong><br>Organize completed reports without cluttering the main view. <strong>Archive</strong> moves them to a read-only archive. <strong>Delete</strong> sends them to a virtual trash without permanent removal.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/archived.png">
+      <figcaption 
+        data-es="<strong>Sección Archived</strong><br>Vista de reportes archivados en modo lectura. Puedes abrirlos con <strong>Open Notes</strong>, restaurarlos a la sección principal con <strong>Restore</strong> o enviarlos a la papelera con <strong>Delete</strong>."
+        data-en="<strong>Archived Section</strong><br>Read-only view of archived reports. Use <strong>Open Notes</strong> to view, <strong>Restore</strong> to move back to main workflow, or <strong>Delete</strong> to send to trash.">
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/trash.png">
+      <figcaption 
+        data-es="<strong>Trash · Papelera</strong><br>Funciona como la sección Archived pero permite eliminación definitiva con <strong>Delete Permanently</strong>. También puedes abrir notas o restaurarlas nuevamente a la sección principal."
+        data-en="<strong>Trash</strong><br>Similar to Archived but allows permanent deletion using <strong>Delete Permanently</strong>. You can also open notes or restore them to the main section.">
+      </figcaption>
+    </figure>
+
+  </div>
+
+</section>
+</main>
+
+<footer>
+  <p>© 2026 CEREBRO — Built by Jaime Vilaplana.</p>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -6,22 +6,17 @@
 <title>CEREBRO · Guía</title>
 
 <style>
-  .lang-toggle {
-  position: sticky;
-  top: 0;
-  background: #111827;
-  padding: 15px 0;
-  z-index: 1000;
-}
 body{
   margin:0;
-  display:flex;
   background:#0f172a;
   color:#fff;
   font-family:system-ui,sans-serif;
 }
 
+/* ========================= */
 /* NAV */
+/* ========================= */
+
 .guide-nav{
   width:240px;
   background:#111827;
@@ -29,6 +24,7 @@ body{
   border-right:1px solid rgba(255,255,255,0.05);
   position:fixed;
   height:100vh;
+  overflow-y:auto;
 }
 
 .guide-nav h3{
@@ -51,12 +47,16 @@ body{
   font-size:.95rem;
 }
 
-.guide-nav a:hover{ background:#2563eb; }
+.guide-nav a:hover{
+  background:#2563eb;
+}
 
+/* ========================= */
 /* CONTENT */
+/* ========================= */
+
 .content-wrapper{
   margin-left:240px;
-  width:100%;
 }
 
 .guide-container{
@@ -72,7 +72,9 @@ body{
   border-radius:16px;
 }
 
-.guide-section h2{ margin-bottom:20px; }
+.guide-section h2{
+  margin-bottom:20px;
+}
 
 .guide-section p{
   opacity:.85;
@@ -103,16 +105,18 @@ body{
   opacity:.7;
 }
 
-/* HERO */
-.hero-section{
-  margin-bottom:80px;
-  padding:60px 40px;
-  background:linear-gradient(135deg,#111827,#1f2937);
-  border-radius:16px;
+/* ========================= */
+/* LANGUAGE */
+/* ========================= */
+
+.lang-toggle{
+  position:sticky;
+  top:0;
+  background:#111827;
+  padding:15px 0;
+  z-index:1000;
   text-align:center;
 }
-
-.lang-toggle{ margin-top:20px; }
 
 .lang-toggle button{
   padding:8px 16px;
@@ -122,10 +126,15 @@ body{
   background:#1f2937;
   color:#fff;
   cursor:pointer;
-  transition:.2s;
 }
 
-.lang-toggle button:hover{ background:#2563eb; }
+.lang-toggle button:hover{
+  background:#2563eb;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
 
 footer{
   text-align:center;
@@ -133,8 +142,46 @@ footer{
   border-top:1px solid rgba(255,255,255,0.05);
 }
 
-html{
-  scroll-behavior: smooth;
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px){
+
+  .guide-nav{
+    position:relative;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+
+  .guide-nav h3{
+    width:100%;
+    margin-bottom:10px;
+  }
+
+  .guide-nav a{
+    flex:1 1 auto;
+    text-align:center;
+    margin-bottom:0;
+  }
+
+  .content-wrapper{
+    margin-left:0;
+  }
+
+  .guide-section{
+    padding:25px;
+  }
+
+  .guide-images{
+    flex-direction:column;
+  }
+
 }
 </style>
 
@@ -154,6 +201,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 </head>
 
 <body>
+
 <nav class="guide-nav">
 
   <a href="index.html"
@@ -164,48 +212,26 @@ window.addEventListener("DOMContentLoaded",()=>{
 
   <h3 data-es="Guía" data-en="Guide">Guía</h3>
 
-  <a href="#studyflow" 
-     data-es="📘 StudyFlow" 
-     data-en="📘 StudyFlow">📘 StudyFlow</a>
-
-  <a href="#agenda" 
-     data-es="📅 Agenda" 
-     data-en="📅 Agenda">📅 Agenda</a>
-
-  <a href="#prompts" 
-     data-es="🧠 Prompts" 
-     data-en="🧠 Prompts">🧠 Prompts</a>
-
-  <a href="#workflow" 
-     data-es="⚙️ Workflow" 
-     data-en="⚙️ Workflow">⚙️ Workflow</a>
+  <a href="#studyflow" data-es="📘 StudyFlow" data-en="📘 StudyFlow">📘 StudyFlow</a>
+  <a href="#agenda" data-es="📅 Agenda" data-en="📅 Agenda">📅 Agenda</a>
+  <a href="#prompts" data-es="🧠 Prompts" data-en="🧠 Prompts">🧠 Prompts</a>
+  <a href="#workflow" data-es="⚙️ Workflow" data-en="⚙️ Workflow">⚙️ Workflow</a>
 
 </nav>
 
 <div class="content-wrapper">
 <main class="guide-container">
 
-<!-- ===================== -->
-<!-- STUDYFLOW -->
-<!-- ===================== -->
 <h1 data-es="Guía Completa de Uso"
     data-en="Complete User Guide"
     style="margin-bottom:30px; text-align:center;">
 </h1>
 
-
-
-<div class="lang-toggle" style="text-align:center; margin-bottom:30px;">
-  <button onclick="switchLang('es')"
-          style="padding:8px 16px; margin:0 5px; border-radius:6px; border:none; background:#1f2937; color:#fff; cursor:pointer;">
-    Español
-  </button>
-
-  <button onclick="switchLang('en')"
-          style="padding:8px 16px; margin:0 5px; border-radius:6px; border:none; background:#1f2937; color:#fff; cursor:pointer;">
-    English
-  </button>
+<div class="lang-toggle">
+  <button onclick="switchLang('es')">Español</button>
+  <button onclick="switchLang('en')">English</button>
 </div>
+
 <section class="guide-section" id="studyflow">
 <h2 data-es="StudyFlow · Sistema de Aprendizaje Modular"
     data-en="StudyFlow · Modular Learning System">
@@ -531,6 +557,14 @@ window.addEventListener("DOMContentLoaded",()=>{
   </div>
 
 </section>
+</main>
+
+<footer>
+  <p>© 2026 CEREBRO — Built by Jaime Vilaplana.</p>
+</footer>
+
+</div>
+
 </main>
 
 <footer>

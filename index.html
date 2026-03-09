@@ -156,14 +156,16 @@ window.onload = () => switchLang("es");
      data-en="Explore the step-by-step visual guide and understand how Agenda, StudyFlow, Workflow and Prompts connect into one personal operating system. If you want to use CEREBRO seriously, start here.">
   </p>
 
-  <a href="guia.html"
-     class="btn stable"
-     style="padding:16px 34px; font-size:1.05rem; font-weight:600;">
-     📘 
-     <span data-es="Ver Guía Completa"
-           data-en="View Complete Guide">
-     </span>
-  </a>
+<a href="guia.html"
+class="btn stable"
+style="padding:16px 34px; font-size:1.05rem; font-weight:600;"
+onclick="gtag('event','open_guide',{page:'index'});">
+📘
+<span
+data-es="Ver Guía Completa"
+data-en="View Complete Guide">
+</span>
+</a>
 
 </section>
 
@@ -185,7 +187,8 @@ data-en="Each CEREBRO release introduces structural improvements to the system: 
 
 <a href="updates.html"
 class="btn stable"
-style="padding:16px 34px; font-size:1.05rem; font-weight:600;">
+style="padding:16px 34px; font-size:1.05rem; font-weight:600;"
+onclick="gtag('event','open_updates',{page:'index'});">
 🚀
 <span
 data-es="Ver Historial de Actualizaciones"
@@ -218,12 +221,14 @@ v1.23.0
 <div style="display:flex; gap:10px; flex-wrap:wrap;">
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.23.0/CEREBRO-Windows.zip"
-class="btn stable">
+class="btn stable"
+onclick="gtag('event','download_windows',{version:'1.23.0'});">
 🪟 Windows
 </a>
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.23.0/CEREBRO-macOS.zip"
-class="btn stable">
+class="btn stable"
+onclick="gtag('event','download_macos',{version:'1.23.0'});">
 🍎 macOS
 </a>
 
@@ -247,10 +252,16 @@ v1.22.1
 <div style="display:flex; gap:10px; flex-wrap:wrap;">
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.22.1/CEREBRO-Windows.zip"
-class="btn">🪟 Windows</a>
+class="btn"
+onclick="gtag('event','download_windows',{version:'1.22.1'});">
+🪟 Windows
+</a>
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.22.1/CEREBRO-macOS.zip"
-class="btn">🍎 macOS</a>
+class="btn"
+onclick="gtag('event','download_macos',{version:'1.22.1'});">
+🍎 macOS
+</a>
 
 </div>
 </div>
@@ -272,10 +283,16 @@ v1.10.0
 <div style="display:flex; gap:10px; flex-wrap:wrap;">
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.10.0/CEREBRO-Windows.zip"
-class="btn">🪟 Windows</a>
+class="btn"
+onclick="gtag('event','download_windows',{version:'1.10.0'});">
+🪟 Windows
+</a>
 
 <a href="https://github.com/zokan121522/studyFlow/releases/download/v1.10.0/CEREBRO-macOS.zip"
-class="btn">🍎 macOS</a>
+class="btn"
+onclick="gtag('event','download_macos',{version:'1.10.0'});">
+🍎 macOS
+</a>
 
 </div>
 </div>

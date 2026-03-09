@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEREBRO · Updates</title>
+
+<style>
+
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+background:#0f172a;
+color:#fff;
+font-family:system-ui,sans-serif;
+}
+
+/* NAV */
+
+.guide-nav{
+width:240px;
+background:#111827;
+padding:28px 18px;
+border-right:1px solid rgba(255,255,255,0.05);
+position:fixed;
+height:100vh;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.guide-nav a{
+display:block;
+padding:9px 12px;
+border-radius:10px;
+text-decoration:none;
+color:#fff;
+background:#1f2937;
+transition:.2s;
+font-size:.9rem;
+}
+
+.guide-nav a:hover{background:#2563eb;}
+
+.nav-title{
+font-size:.75rem;
+opacity:.6;
+margin:8px 0 4px 0;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.nav-lang{
+margin-top:20px;
+padding-top:16px;
+border-top:1px solid rgba(255,255,255,0.05);
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.nav-lang button{
+width:100%;
+padding:9px;
+border:none;
+border-radius:10px;
+background:#1f2937;
+color:#fff;
+cursor:pointer;
+transition:.2s;
+}
+
+.nav-lang button:hover{background:#2563eb;}
+
+/* CONTENT */
+
+.content-wrapper{margin-left:240px;}
+
+.guide-container{
+max-width:1100px;
+margin:0 auto;
+padding:50px 28px;
+}
+
+.guide-section{
+margin-bottom:40px;
+padding:30px 24px;
+background:#111827;
+border-radius:18px;
+}
+
+/* IMAGES GRID */
+
+.update-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:14px;
+}
+
+.update-grid img{
+width:100%;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.update-comment{
+margin-top:18px;
+opacity:.9;
+line-height:1.5;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+.guide-nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:auto;
+padding:12px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.nav-title{display:none;}
+
+.guide-nav a:first-child{grid-column:1/span 2;}
+
+.nav-lang{
+grid-column:1/span 2;
+flex-direction:row;
+border:none;
+padding:0;
+}
+
+.nav-lang button{flex:1;}
+
+.content-wrapper{
+margin-left:0;
+padding-top:170px;
+}
+
+.guide-container{padding:16px 12px;}
+
+.update-grid{grid-template-columns:1fr;}
+
+}
+
+</style>
+
+<script>
+function switchLang(lang){
+document.documentElement.lang = lang;
+document.querySelectorAll("[data-es]").forEach(el=>{
+const text = el.getAttribute("data-"+lang);
+if(text) el.innerHTML = text;
+});
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+switchLang("es");
+});
+</script>
+
+</head>
+
+<body>
+
+<nav class="guide-nav">
+
+<a href="index.html"
+data-es="🏠 Inicio"
+data-en="🏠 Home">🏠 Inicio</a>
+
+<div class="nav-title">Updates v1.23.0 </div>
+
+<a href="#dark">🌙 Dark Theme</a>
+<a href="#light">☀️ Light Theme</a>
+<a href="#search">🔎 Search</a>
+
+<div class="nav-lang">
+<button onclick="switchLang('es')">Español</button>
+<button onclick="switchLang('en')">English</button>
+</div>
+
+</nav>
+
+<div class="content-wrapper">
+<main class="guide-container">
+
+<!-- ================= -->
+<!-- DARK THEME -->
+<!-- ================= -->
+
+<section class="guide-section" id="dark">
+
+<h2 data-es="Modo Dark · Nuevo sistema de temas"
+data-en="Dark Mode · New theme system"></h2>
+
+<div class="update-grid">
+
+<img src="assets/dark.png">
+<img src="assets/darkStudyflow.png">
+
+<img src="assets/darkAgenda.png">
+<img src="assets/darkPrompt.png">
+
+</div>
+
+<p class="update-comment"
+data-es="Se ha implementado un sistema completo de temas visuales. El modo Dark reorganiza todos los colores del sistema para mejorar la legibilidad y reducir la fatiga visual. Todo el diseño ahora utiliza variables de estilo centralizadas para mantener coherencia visual en StudyFlow, Agenda, Prompts y Workflow."
+data-en="A complete visual theme system has been implemented. Dark mode reorganizes the application's color system to improve readability and reduce visual fatigue. The entire UI now relies on centralized style variables ensuring visual consistency across StudyFlow, Agenda, Prompts and Workflow.">
+</p>
+
+</section>
+
+<!-- ================= -->
+<!-- LIGHT THEME -->
+<!-- ================= -->
+
+<section class="guide-section" id="light">
+
+<h2 data-es="Modo Light · Tema claro"
+data-en="Light Mode · Bright theme"></h2>
+
+<div class="update-grid">
+
+<img src="assets/light.png">
+<img src="assets/lightStudyFlow.png">
+
+<img src="assets/lightAgenda.png">
+<img src="assets/lightPrompt.png">
+
+</div>
+
+<p class="update-comment"
+data-es="El modo Light introduce una versión clara del sistema de interfaz. Está pensado para entornos con alta iluminación o para usuarios que prefieren un diseño más tradicional. El cambio de tema puede realizarse en tiempo real desde el selector integrado en la aplicación."
+data-en="Light mode introduces a bright interface variant designed for well-lit environments or users who prefer a traditional interface style. Themes can now be switched in real time using the integrated theme selector inside the application.">
+</p>
+
+</section>
+
+<!-- ================= -->
+<!-- SEARCH -->
+<!-- ================= -->
+
+<section class="guide-section" id="search">
+
+<h2 data-es="Sistema de Búsqueda Global en Agenda"
+data-en="Global Search System in Agenda"></h2>
+
+<div class="update-grid">
+
+<img src="assets/searchCategory.png">
+
+</div>
+
+<p class="update-comment"
+data-es="La Agenda ahora incorpora un sistema de búsqueda global que permite localizar sesiones entre todas las semanas almacenadas. Las sesiones pueden filtrarse por nombre, categoría, estado o contenido, facilitando revisar trabajo pasado, localizar tareas específicas o analizar progreso."
+data-en="Agenda now includes a global search system that allows locating sessions across all stored weeks. Sessions can be filtered by name, category, status or content, making it easier to review past work, find specific tasks or analyze progress.">
+</p>
+
+</section>
+
+</main>
+</div>
+
+</body>
+</html>
